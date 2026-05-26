@@ -28,3 +28,48 @@
 .ep-events-empty {
 	color: #646970;
 }
+
+.ep-events-search-form {
+	margin-bottom: 2em;
+	max-width: 32rem;
+}
+
+.ep-events-search-field {
+	margin-bottom: 1em;
+}
+
+.ep-events-search-field label {
+	display: block;
+	font-weight: 600;
+	margin-bottom: 0.35em;
+}
+
+.ep-events-search-field input {
+	width: 100%;
+	max-width: 100%;
+	padding: 0.5em 0.65em;
+}
+
+.ep-events-search-actions {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.ep-events-search-actions .button {
+	cursor: pointer;
+	padding: 0.5em 1.25em;
+}
+
+.ep-events-search-clear {
+	text-decoration: underline;
+}
+
+.ep-events-search-hint {
+	color: #646970;
+	margin-top: 1em;
+}
+
+.ep-events-search-results {
+	margin-top: 1.5em;
+}

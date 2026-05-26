@@ -9,7 +9,9 @@ defined( 'ABSPATH' ) || exit;
 
 require_once EP_PLUGIN_DIR . 'includes/class-post-type.php';
 require_once EP_PLUGIN_DIR . 'includes/class-meta-box.php';
+require_once EP_PLUGIN_DIR . 'includes/class-event-list.php';
 require_once EP_PLUGIN_DIR . 'includes/class-shortcode.php';
+require_once EP_PLUGIN_DIR . 'includes/class-search.php';
 
 /**
  * Class EP_Plugin
@@ -45,6 +47,13 @@ final class EP_Plugin {
 	private $shortcode;
 
 	/**
+	 * Search shortcode handler.
+	 *
+	 * @var EP_Search
+	 */ƒ
+	private $search;
+
+	/**
 	 * Get singleton instance.
 	 *
 	 * @return EP_Plugin
@@ -63,6 +72,7 @@ final class EP_Plugin {
 		$this->post_type = new EP_Post_Type();
 		$this->meta_box  = new EP_Meta_Box();
 		$this->shortcode = new EP_Shortcode();
+		$this->search    = new EP_Search();
 
 		add_action( 'init', array( $this->post_type, 'register' ) );
 		add_action( 'add_meta_boxes', array( $this->meta_box, 'register' ) );
@@ -70,6 +80,7 @@ final class EP_Plugin {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_frontend_assets' ) );
 
 		$this->shortcode->register();
+		$this->search->register();
 	}
 
 	/**
